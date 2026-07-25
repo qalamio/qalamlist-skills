@@ -1,29 +1,50 @@
 # QalamList Skills
 
-Agent Skills for [QalamList](https://qalamlist.qalamio.com/self-host) — reusable instructions that help AI coding agents set up, diagnose, and deploy QalamList safely.
+Agent Skills for **[QalamList](https://qalamlist.qalamio.com/self-host)** — the self-hosted waitlist software for pre-launch signups on Cloudflare Workers.
+
+These skills teach AI coding agents how to install prerequisites, run doctor checks, develop locally, and deploy QalamList safely (Cloudflare D1, Turnstile, Wrangler secrets, and production deploys).
 
 Skills follow the open [Agent Skills](https://agentskills.io/) format (`SKILL.md` + optional resources).
+
+## About QalamList
+
+[QalamList](https://qalamlist.qalamio.com/self-host) is a **self-hosted waitlist manager** for founders launching products:
+
+- **Pre-launch waitlists** — capture interested visitors before launch day
+- **Buy once, own forever** — one-time purchase waitlist software, no monthly SaaS fees
+- **Self-host on Cloudflare** — Workers + D1 SQLite, your account, your data
+- **UTM attribution** — first-touch and last-touch signup tracking
+- **Embeddable waitlist widget** — drop into your existing landing page
+- **REST API & webhooks** — connect to your tools without vendor lock-in
+- **CSV export** — export waitlist signups anytime
+- **Bot protection** — Cloudflare Turnstile on public signup forms
+- **Source code included** — customize branding, fields, and workflows
+
+Prefer hosted? See [QalamList Cloud](https://qalamlist.qalamio.com/cloud). Full docs: [QalamList manual](https://qalamlist.qalamio.com/manual).
+
+**Keywords:** self-hosted waitlist, pre-launch waitlist software, waitlist manager, Cloudflare Workers waitlist, open waitlist tool, Waitlister alternative, GetWaitlist alternative, no subscription waitlist, own your data waitlist, UTM waitlist attribution, embeddable waitlist form, founder waitlist.
 
 ## Available skills
 
 | Skill | Description |
 | --- | --- |
-| [`qalamlist-ops-companion`](./skills/qalamlist-ops-companion) | Guided prerequisites, doctor checks, local dev, and Cloudflare deploy for QalamList. Approval-gated for installs, secrets, remote D1, and production deploys. |
+| [`qalamlist-ops-companion`](./skills/qalamlist-ops-companion) | Guided prerequisites, doctor checks, local dev, and Cloudflare deploy for self-hosted QalamList. Approval-gated for installs, secrets, remote D1 migrations, and production deploys. |
 
 ### qalamlist-ops-companion
 
-Helps customers get QalamList running without surprising them.
+Helps customers get **self-hosted QalamList** running on Cloudflare without surprising them.
 
-**Use when** the user is in a QalamList repo and says things like:
+**Use when** the user is in a QalamList checkout and says things like:
 
-- "deploy this" / "publish" / "set up Cloudflare"
-- "doctor" / "why is deploy failing"
-- "install prerequisites" / "what do I need"
-- "run locally" / "start the dev server"
+- "deploy this" / "publish" / "set up Cloudflare Workers"
+- "doctor" / "why is deploy failing" / "D1 migration error"
+- "install prerequisites" / "what do I need for Wrangler"
+- "run locally" / "start the waitlist dev server"
+- "configure Turnstile" / "set JWT_SECRET" / "apply remote migrations"
 
 **Workflows:** `prerequisites` → `doctor` → `local` → `deploy`
 
-**Safety:** read-only checks are free; installs, secrets, remote migrations, and deploys need an explicit yes.
+**Safety:** read-only checks are free; installs, secrets, remote D1 migrations, and deploys need an explicit yes.
 
 ## Install
 
@@ -100,13 +121,24 @@ Each skill is a folder with a `SKILL.md` whose `name` matches the folder name.
 
 1. Open a **QalamList** repository checkout in your agent.
 2. Ask naturally, for example:
-   - "Help me deploy QalamList"
-   - "Run doctor on this install"
-   - "Set up prerequisites on this machine"
-   - "Run it locally"
+   - "Help me deploy self-hosted QalamList to Cloudflare"
+   - "Run doctor on this waitlist install"
+   - "Set up prerequisites (Node, jq, Wrangler) on this machine"
+   - "Run the waitlist app locally"
+   - "Apply D1 migrations and configure Turnstile secrets"
 3. The agent should load `qalamlist-ops-companion` and follow its approval gates.
 
 You can also name the skill explicitly: "Use qalamlist-ops-companion to deploy."
+
+## What the ops skill helps with
+
+| Task | Examples |
+| --- | --- |
+| Prerequisites | Node.js, npm, `jq`, mise, Wrangler via `npx` |
+| Doctor / health check | Cloudflare auth, `wrangler.production.jsonc`, D1 binding `DB` / `qalamlist-db` |
+| Local development | `npm install`, `npm run dev`, Vitest, Playwright e2e |
+| Production deploy | `./deploy.sh`, remote D1 migrations, Turnstile + `JWT_SECRET` |
+| Post-deploy | First admin at `https://<your-domain>/setup` |
 
 ## Repository layout
 
@@ -125,9 +157,12 @@ qalamlist-skills/
             └── evals.json    # Behavioral eval prompts
 ```
 
-## Related
+## Links
 
-- [QalamList](https://qalamlist.qalamio.com/self-host) — the product this skill operates on
+- [QalamList self-host](https://qalamlist.qalamio.com/self-host) — buy once, self-hosted waitlist on Cloudflare
+- [QalamList Cloud](https://qalamlist.qalamio.com/cloud) — hosted waitlist option
+- [QalamList manual](https://qalamlist.qalamio.com/manual) — setup, analytics, webhooks, API
+- [QalamList support](https://qalamlist.qalamio.com/support)
 - [Agent Skills specification](https://agentskills.io/specification)
 - [skills.sh](https://skills.sh) — skill discovery index
 
