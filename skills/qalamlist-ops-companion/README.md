@@ -1,6 +1,6 @@
 # qalamlist-ops-companion
 
-Agent skill that helps customers install prerequisites, run health checks, develop locally, and deploy [QalamList](https://qalamlist.qalamio.com/) on Cloudflare.
+Agent skill that helps customers install prerequisites, run health checks, develop locally, and deploy [QalamList](https://qalamlist.qalamio.com/self-host) on Cloudflare.
 
 ## When it triggers
 
