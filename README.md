@@ -1,6 +1,6 @@
 # QalamList Skills
 
-Agent Skills for [QalamList](https://github.com/qalamio/qalamlist) — reusable instructions that help AI coding agents set up, diagnose, and deploy QalamList safely.
+Agent Skills for [QalamList](https://qalamlist.qalamio.com/) — reusable instructions that help AI coding agents set up, diagnose, and deploy QalamList safely.
 
 Skills follow the open [Agent Skills](https://agentskills.io/) format (`SKILL.md` + optional resources).
 
@@ -127,7 +127,7 @@ qalamlist-skills/
 
 ## Related
 
-- [QalamList](https://github.com/qalamio/qalamlist) — the product this skill operates on
+- [QalamList](https://qalamlist.qalamio.com/) — the product this skill operates on
 - [Agent Skills specification](https://agentskills.io/specification)
 - [skills.sh](https://skills.sh) — skill discovery index
 
