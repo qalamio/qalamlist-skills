@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "QalamList",
+      "description": "Skills for installing, diagnosing, and deploying QalamList on Cloudflare.",
+      "skills": [
+        "qalamlist-ops-companion"
+      ]
+    }
+  ]
+}

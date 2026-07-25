@@ -1,0 +1,22 @@
+{
+  "name": "qalamlist-skills",
+  "owner": {
+    "name": "Qalam",
+    "email": "hello@qalam.io"
+  },
+  "metadata": {
+    "description": "Agent Skills for QalamList setup, diagnostics, and Cloudflare deployment",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "qalamlist-skills",
+      "description": "QalamList ops companion for prerequisites, doctor checks, local dev, and safe Cloudflare deploys",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/qalamlist-ops-companion"
+      ]
+    }
+  ]
+}
